@@ -1,0 +1,193 @@
+<div fxLayout="row wrap">
+  <!-- column -->
+  <div fxFlex.gt-sm="25" fxFlex.gt-xs="100" fxFlex="100">
+    <mat-card>
+      <mat-card-content>
+        <!-- Row -->
+        <div fxLayout="row wrap">
+          <!-- column -->
+          <div fxFlex.gt-sm="50" fxFlex.gt-xs="50">
+            <h3 class="m-0">86</h3>
+            <h6 class="text-muted m-0">New Clients</h6>
+          </div>
+          <!-- column -->
+          <div fxFlex.gt-sm="50" fxFlex.gt-xs="50" class="text-right">
+            <button mat-fab color="primary" mat-card-icon class="shadow-none">
+              <mat-icon>account_circle</mat-icon>
+            </button>
+          </div>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  <!-- column -->
+  <!-- column -->
+  <div fxFlex.gt-sm="25" fxFlex.gt-xs="100" fxFlex="100">
+    <mat-card>
+      <mat-card-content>
+        <!-- Row -->
+        <div fxLayout="row wrap">
+          <!-- column -->
+          <div fxFlex.gt-sm="50" fxFlex.gt-xs="50">
+            <h3 class="m-0">248</h3>
+            <h6 class="text-muted m-0">All Projects</h6>
+          </div>
+          <!-- column -->
+          <div fxFlex.gt-sm="50" fxFlex.gt-xs="50" class="text-right">
+            <button mat-fab color="warn" mat-card-icon class="shadow-none">
+              <mat-icon>local_mall</mat-icon>
+            </button>
+          </div>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  <!-- column -->
+  <!-- column -->
+  <div fxFlex.gt-sm="25" fxFlex.gt-xs="100" fxFlex="100">
+    <mat-card>
+      <mat-card-content>
+        <!-- Row -->
+        <div fxLayout="row wrap">
+          <!-- column -->
+          <div fxFlex.gt-sm="50" fxFlex.gt-xs="50">
+            <h3 class="m-0">352</h3>
+            <h6 class="text-muted m-0">New Items</h6>
+          </div>
+          <!-- column -->
+          <div fxFlex.gt-sm="50" fxFlex.gt-xs="50" class="text-right">
+            <button mat-fab color="accent" mat-card-icon class="shadow-none">
+              <mat-icon>stars</mat-icon>
+            </button>
+          </div>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  <!-- column -->
+  <!-- column -->
+  <div fxFlex.gt-sm="25" fxFlex.gt-xs="100" fxFlex="100">
+    <mat-card>
+      <mat-card-content>
+        <!-- Row -->
+        <div fxLayout="row wrap">
+          <!-- column -->
+          <div fxFlex.gt-sm="50" fxFlex.gt-xs="50">
+            <h3 class="m-0">159</h3>
+            <h6 class="text-muted m-0">New Invoices</h6>
+          </div>
+          <!-- column -->
+          <div fxFlex.gt-sm="50" fxFlex.gt-xs="50" class="text-right">
+            <button
+              mat-fab
+              color="warn"
+              mat-card-icon
+              class="shadow-none bg-success"
+            >
+              <mat-icon>content_paste</mat-icon>
+            </button>
+          </div>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  <!-- column -->
+</div>
+
+<!-- CHARTS PART -->
+
+<div fxLayout="row wrap">
+  <div fxFlex.gt-sm="50" fxFlex.gt-xs="100" fxFlex="100">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>General Chart</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <canvas
+          baseChart
+          [datasets]="barChartData"
+          [labels]="barChartLabels"
+          [options]="barChartOptions"
+          [plugins]="barChartPlugins"
+          [legend]="barChartLegend"
+          [chartType]="barChartType"
+          [colors]="[
+            { backgroundColor: '#1e88e5' },
+            { backgroundColor: '#00bcd4' }
+          ]"
+        >
+        </canvas>
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+  <div fxFlex.gt-sm="50" fxFlex.gt-xs="100" fxFlex="100">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>All Products</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <canvas
+          baseChart
+          [data]="doughnutChartData"
+          [labels]="doughnutChartLabels"
+          [chartType]="doughnutChartType"
+          [colors]="[
+            { backgroundColor: '#81d4fa' },
+            { backgroundColor: '#80deea' },
+            { backgroundColor: '#80cbc4' }
+          ]"
+        >
+        </canvas>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>
+
+<!-- MATERIAL TABLE -->
+<div class="row mt-4">
+  <div style="width: 100%;" class="col-md-12">
+    <div class="card">
+      <div class="card-header">
+        <p class="lead mb-0">Latest Elements</p>
+      </div>
+      <div class="card-body">
+        <div class="mat-elevation-z8">
+          <table mat-table style="width: 100%;" [dataSource]="dataSource">
+            <!-- Position Column -->
+            <ng-container matColumnDef="position">
+              <th mat-header-cell *matHeaderCellDef>No.</th>
+              <td mat-cell *matCellDef="let element">{{ element.position }}</td>
+            </ng-container>
+
+            <!-- Name Column -->
+            <ng-container matColumnDef="name">
+              <th mat-header-cell *matHeaderCellDef>Name</th>
+              <td mat-cell *matCellDef="let element">{{ element.name }}</td>
+            </ng-container>
+
+            <!-- Weight Column -->
+            <ng-container matColumnDef="weight">
+              <th mat-header-cell *matHeaderCellDef>Weight</th>
+              <td mat-cell *matCellDef="let element">{{ element.weight }}</td>
+            </ng-container>
+
+            <!-- Symbol Column -->
+            <ng-container matColumnDef="symbol">
+              <th mat-header-cell *matHeaderCellDef>Symbol</th>
+              <td mat-cell *matCellDef="let element">{{ element.symbol }}</td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+          </table>
+
+          <mat-paginator
+            [pageSizeOptions]="[5, 10, 20]"
+            showFirstLastButtons
+          ></mat-paginator>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

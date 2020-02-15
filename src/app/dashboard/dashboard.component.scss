@@ -1,0 +1,91 @@
+// Minimum height for the dashboard.
+.dashboard-container {
+  min-height: 100vh;
+}
+
+.custom-mat-sidenav {
+  min-width: 15%;
+  border: none;
+}
+
+@media only screen and (max-width: 560px) {
+  .custom-mat-sidenav {
+    min-width: 55%;
+  }
+}
+
+mat-list a {
+  text-decoration: none;
+  transition: all 0.2s;
+
+  &:hover {
+    background-color: darken(white, 10%);
+  }
+}
+
+span.menu-list-item {
+  padding-left: 1.3rem;
+  font-size: 15px;
+  font-weight: 300;
+}
+
+// HEADER COMPONENT
+.header {
+  background-image: linear-gradient(to right bottom, #1e88e5, #2196f3);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  min-height: 50px;
+  &-logo {
+    color: white;
+  }
+}
+
+.sidenav-header {
+  background-image: linear-gradient(to right bottom, #2196f3, #1e88e5);
+  min-height: 50px;
+}
+
+.sidenav-header-logo {
+  height: 50px;
+}
+
+.custom-button {
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  color: white;
+}
+
+.icon-rotated-180 {
+  transform: rotate(180deg);
+  transition: all 0.5s;
+}
+
+.icon-rotated-270 {
+  transform: rotate(270deg);
+  transition: all 0.5s;
+}
+
+.icon-rotated-0 {
+  transform: rotate(0);
+  transition: all 0.5s;
+}
+
+.icon-rotated-90 {
+  transform: rotate(90deg);
+  transition: all 0.5s;
+}
+
+mat-icon {
+  color: #484848;
+}
+
+.example-tree ul,
+.example-tree li {
+  margin-top: 0;
+  margin-bottom: 0;
+  list-style-type: none;
+}

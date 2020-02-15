@@ -1,0 +1,147 @@
+<mat-sidenav-container class="dashboard-container">
+  <mat-sidenav class="custom-mat-sidenav shadow">
+    <!-- HERE COMES THE LOGO OF THE COMPANY AND SOME LOGGED IN USER INFORMATION. -->
+    <div
+      class="sidenav-header"
+      style="display: flex; align-items: center; justify-content: flex-start;"
+    >
+      <img
+        style="height: 35px;"
+        class="sidenav-header-logo pl-3"
+        src="assets/images/mat-ng-logo.png"
+        alt=""
+      />
+    </div>
+
+    <div style="position: relative;">
+      <img
+        src="../../assets/images/MatNgImage.png"
+        style="height: 150px; object-fit: cover;"
+        alt=""
+      />
+      <a
+        (click)="toggleProfileMenu()"
+        fxLayout="row"
+        fxLayoutAlign="space-between center"
+        style="position: absolute; height: 40px; width: 100%; background-color: white; bottom: 0; left: 0; opacity: 0.6; cursor: pointer;"
+      >
+        <span class="p-l-10" style="color: #484848; font-size: 16px;"
+          >Berk Elmas</span
+        >
+        <mat-icon
+          [ngClass]="{
+            'icon-rotated-270': profileMenuOpened,
+            'icon-rotated-90': !profileMenuOpened
+          }"
+          class="m-r-10"
+          >chevron_right</mat-icon
+        >
+      </a>
+    </div>
+
+    <div
+      style="padding: 0; box-shadow: inset 0px 0px 10px -5px rgba(118,118,118,1); overflow: hidden; cursor: pointer;"
+      @menuItemsAnimation
+      *ngIf="profileMenuOpened"
+    >
+      <button
+        fxLayout="row"
+        fxLayoutAlign="start center"
+        style="width: 100%;"
+        class="mat-tree-node no-outline"
+        mat-button
+      >
+        <mat-icon fontSet="material-icons-outlined" class="mat-icon-rtl-mirror">
+          info
+        </mat-icon>
+        <span class="menu-list-item">Profile</span>
+      </button>
+      <button
+        fxLayout="row"
+        fxLayoutAlign="start center"
+        style="width: 100%;"
+        class="mat-tree-node no-outline"
+        mat-button
+      >
+        <mat-icon fontSet="material-icons-outlined" class="mat-icon-rtl-mirror">
+          launch
+        </mat-icon>
+        <span class="menu-list-item">Logout</span>
+      </button>
+    </div>
+
+    <mat-tree
+      [dataSource]="dataSource"
+      [treeControl]="treeControl"
+      class="example-tree"
+    >
+      <!-- This is the tree node template for leaf nodes -->
+      <mat-tree-node *matTreeNodeDef="let node" matTreeNodeToggle>
+        <button
+          [routerLink]="node.route"
+          fxLayout="row"
+          fxLayoutAlign="start center"
+          style="width: 100%"
+          class="mat-tree-node no-outline"
+          mat-button
+          matTreeNodeToggle
+        >
+          <mat-icon
+            fontSet="material-icons-outlined"
+            class="mat-icon-rtl-mirror"
+          >
+            {{ node.icon }}
+          </mat-icon>
+          <span class="menu-list-item">{{ node.name }}</span>
+        </button>
+      </mat-tree-node>
+
+      <!-- This is the tree node template for expandable nodes -->
+      <mat-nested-tree-node *matTreeNodeDef="let node; when: hasChild">
+        <li>
+          <a
+            fxLayout="row"
+            fxLayoutAlign="start center"
+            style="width: 100%; cursor: pointer;"
+            class="mat-tree-node no-outline p-10"
+            matRipple
+            matTreeNodeToggle
+          >
+            <mat-icon>
+              {{ node.icon }}
+            </mat-icon>
+            <span class="menu-list-item">{{ node.name }}</span>
+
+            <mat-icon
+              [ngClass]="{
+                'icon-rotated-90': treeControl.isExpanded(node),
+                'icon-rotated-0': !treeControl.isExpanded(node)
+              }"
+              style="margin-left: auto;"
+            >
+              chevron_right
+            </mat-icon>
+          </a>
+          <ul
+            @menuItemsAnimation
+            style="overflow: hidden; padding: 0"
+            *ngIf="treeControl.isExpanded(node)"
+          >
+            <ng-container matTreeNodeOutlet></ng-container>
+          </ul>
+        </li>
+      </mat-nested-tree-node>
+    </mat-tree>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <app-header
+      (clicked)="matSidenav.toggle()"
+      [sidenavState]="matSidenav.opened"
+    ></app-header>
+
+    <!-- HERE IS ALL THE APP ROUTES... -->
+    <div class="m-3 p-3">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>
