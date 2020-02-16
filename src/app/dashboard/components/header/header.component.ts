@@ -8,6 +8,7 @@ import { Observable } from "rxjs";
 })
 export class HeaderComponent implements OnInit {
   @Output() clicked = new EventEmitter();
+  @Output() toggleEndSidenav = new EventEmitter();
   @Input("sidenavState") sidenavState: boolean;
 
   username$: Observable<string>;

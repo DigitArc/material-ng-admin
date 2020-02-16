@@ -27,10 +27,12 @@ import { PerfectScrollbarConfigInterface } from "ngx-perfect-scrollbar";
 })
 export class DashboardComponent implements OnInit {
   @ViewChild(MatSidenav, { static: true }) matSidenav: MatSidenav;
+  @ViewChild("end", { static: true }) endSidenav: MatSidenav;
   treeControl = new NestedTreeControl<RouteNode>(node => node.children);
   dataSource = new MatTreeNestedDataSource<RouteNode>();
   profileMenuOpened: boolean;
   public config: PerfectScrollbarConfigInterface = {};
+  darkThemeState: boolean = false;
 
   @HostListener("window:resize", ["$event"]) handleScroll(e) {
     if (window.innerWidth > 500) {

@@ -28,7 +28,6 @@
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/custom-material-theme.scss",
               "src/assets/fontawesome/css/all.css",
-              "node_modules/ng2-image-viewer/imageviewer.scss",
               "src/styles.scss",
               "src/assets/styles/style.scss"
             ],

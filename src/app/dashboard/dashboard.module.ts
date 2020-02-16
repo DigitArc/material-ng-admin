@@ -1,6 +1,7 @@
 // CORE ANGULAR
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
+import { FormsModule } from "@angular/forms";
 
 // ROUTING
 import { DashboardRoutingModule } from "./dashboard-routing.module";
@@ -25,6 +26,8 @@ import { MatToolbarModule } from "@angular/material/toolbar";
 import { PerfectScrollbarModule } from "ngx-perfect-scrollbar";
 import { PERFECT_SCROLLBAR_CONFIG } from "ngx-perfect-scrollbar";
 import { PerfectScrollbarConfigInterface } from "ngx-perfect-scrollbar";
+import { MatCheckboxModule } from "@angular/material/checkbox";
+import { MatSlideToggleModule } from "@angular/material/slide-toggle";
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true,
@@ -36,6 +39,7 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   declarations: [DashboardComponent, HeaderComponent],
   imports: [
     CommonModule,
+    FormsModule,
 
     // ANGULAR MATERIAL
     MatSidenavModule,
@@ -47,6 +51,8 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     MatRippleModule,
     MatToolbarModule,
     FlexLayoutModule,
+    MatCheckboxModule,
+    MatSlideToggleModule,
     PerfectScrollbarModule,
 
     DashboardRoutingModule

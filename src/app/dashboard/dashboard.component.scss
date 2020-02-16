@@ -1,6 +1,6 @@
 // Minimum height for the dashboard.
 .dashboard-container {
-  min-height: 100vh;
+  min-height: calc(100vh - 50px);
 }
 
 .custom-mat-sidenav {
@@ -21,19 +21,6 @@ mat-list a {
   &:hover {
     background-color: darken(white, 10%);
   }
-}
-
-span.menu-list-item {
-  padding-left: 1.3rem;
-  font-size: 15px;
-  font-weight: 300;
-  color: #484848;
-}
-
-.active {
-  border-left: 4px solid #2196f3;
-  background-color: #e5e5e5;
-  transition: all 0.3s;
 }
 
 // HEADER COMPONENT
@@ -84,10 +71,6 @@ span.menu-list-item {
 .icon-rotated-90 {
   transform: rotate(90deg);
   transition: all 0.5s;
-}
-
-mat-icon {
-  color: #484848;
 }
 
 .example-tree ul,
