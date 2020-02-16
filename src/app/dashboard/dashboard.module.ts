@@ -22,6 +22,16 @@ import { MatRippleModule } from "@angular/material/core";
 import { FlexLayoutModule } from "@angular/flex-layout";
 import { MatToolbarModule } from "@angular/material/toolbar";
 
+import { PerfectScrollbarModule } from "ngx-perfect-scrollbar";
+import { PERFECT_SCROLLBAR_CONFIG } from "ngx-perfect-scrollbar";
+import { PerfectScrollbarConfigInterface } from "ngx-perfect-scrollbar";
+
+const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
+  suppressScrollX: true,
+  wheelSpeed: 2,
+  wheelPropagation: true
+};
+
 @NgModule({
   declarations: [DashboardComponent, HeaderComponent],
   imports: [
@@ -37,6 +47,7 @@ import { MatToolbarModule } from "@angular/material/toolbar";
     MatRippleModule,
     MatToolbarModule,
     FlexLayoutModule,
+    PerfectScrollbarModule,
 
     DashboardRoutingModule
   ]

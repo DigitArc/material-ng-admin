@@ -1,6 +1,21 @@
 <!-- HERE IS THE HEADER COMPONENT -->
+<div style="height: 50px; width: 100%;"></div>
 
-<div class="header">
+<div
+  class="header"
+  style="position: fixed; top: 0; z-index: 10000; width: 100%;"
+>
+  <div
+    class="sidenav-header custom-mat-sidenav"
+    style="display: flex; align-items: center; justify-content: flex-start;"
+  >
+    <img
+      style="height: 30px; margin-top: 5px;"
+      class="sidenav-header-logo pl-3"
+      src="assets/images/material-ng-logo.png"
+      alt=""
+    />
+  </div>
   <div class="header-left-side d-flex">
     <button class="custom-button" (click)="handleToggle()">
       <i
@@ -10,7 +25,7 @@
       ></i>
     </button>
   </div>
-  <div class="header-right-side" style="height : 50px;">
+  <div class="header-right-side" style="height : 50px; margin-left: auto;">
     <button
       [matMenuTriggerFor]="notification"
       style="color : white;"

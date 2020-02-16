@@ -1,17 +1,14 @@
-<mat-sidenav-container class="dashboard-container">
-  <mat-sidenav class="custom-mat-sidenav shadow">
+<app-header
+  (clicked)="matSidenav.toggle()"
+  [sidenavState]="matSidenav.opened"
+></app-header>
+
+<mat-sidenav-container
+  class="dashboard-container"
+  style="display: flex; flex-direction: row;"
+>
+  <mat-sidenav [perfectScrollbar]="config" class="custom-mat-sidenav shadow">
     <!-- HERE COMES THE LOGO OF THE COMPANY AND SOME LOGGED IN USER INFORMATION. -->
-    <div
-      class="sidenav-header"
-      style="display: flex; align-items: center; justify-content: flex-start;"
-    >
-      <img
-        style="height: 30px; margin-top: 5px;"
-        class="sidenav-header-logo pl-3"
-        src="assets/images/material-ng-logo.png"
-        alt=""
-      />
-    </div>
 
     <div style="position: relative;">
       <img
@@ -143,15 +140,12 @@
       </mat-nested-tree-node>
     </mat-tree>
   </mat-sidenav>
-  <mat-sidenav-content>
-    <app-header
-      (clicked)="matSidenav.toggle()"
-      [sidenavState]="matSidenav.opened"
-    ></app-header>
 
+  <mat-sidenav-content
+    style="position: relative; height: 100vh; width: 100%; padding: 20px"
+  >
     <!-- HERE IS ALL THE APP ROUTES... -->
-    <div class="m-3 p-3">
-      <router-outlet></router-outlet>
-    </div>
+
+    <router-outlet></router-outlet>
   </mat-sidenav-content>
 </mat-sidenav-container>

@@ -7,6 +7,7 @@ import { MatSidenav } from "@angular/material/sidenav";
 import { MatTreeNestedDataSource } from "@angular/material/tree";
 import { NestedTreeControl } from "@angular/cdk/tree";
 import { ActivatedRoute } from "@angular/router";
+import { PerfectScrollbarConfigInterface } from "ngx-perfect-scrollbar";
 
 @Component({
   selector: "app-dashboard",
@@ -29,6 +30,7 @@ export class DashboardComponent implements OnInit {
   treeControl = new NestedTreeControl<RouteNode>(node => node.children);
   dataSource = new MatTreeNestedDataSource<RouteNode>();
   profileMenuOpened: boolean;
+  public config: PerfectScrollbarConfigInterface = {};
 
   @HostListener("window:resize", ["$event"]) handleScroll(e) {
     if (window.innerWidth > 500) {
@@ -38,7 +40,7 @@ export class DashboardComponent implements OnInit {
     }
   }
 
-  constructor(private route: ActivatedRoute) {
+  constructor() {
     this.dataSource.data = MENU_ITEMS;
   }
 
@@ -57,7 +59,5 @@ export class DashboardComponent implements OnInit {
       this.matSidenav.close().then(res => res);
       this.matSidenav.mode = "over";
     }
-
-    console.log(this.route.pathFromRoot);
   }
 }
