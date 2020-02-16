@@ -1,43 +1,12 @@
 import { Component, OnInit, ViewChild, HostListener } from "@angular/core";
+import { trigger, style, transition, animate } from "@angular/animations";
+import { MENU_ITEMS, RouteNode } from "../shared/menu-items";
 
 // ANGULAR MATERIAL
 import { MatSidenav } from "@angular/material/sidenav";
 import { MatTreeNestedDataSource } from "@angular/material/tree";
 import { NestedTreeControl } from "@angular/cdk/tree";
-
-import { trigger, style, transition, animate } from "@angular/animations";
-
-interface RouteNode {
-  name: string;
-  icon?: string;
-  route?: string;
-  children?: RouteNode[];
-}
-
-const TREE_DATA: RouteNode[] = [
-  {
-    name: "Dashboards",
-    icon: "apps",
-    children: [
-      { name: "Dashboard 1", route: "/dashboard/home" },
-      { name: "Dashboard 2", route: "/dashboard/home" },
-      { name: "Dashboard 3", route: "/dashboard/home" }
-    ]
-  },
-  {
-    name: "Forms",
-    icon: "format_align_center",
-    children: [
-      { name: "Text Inputs", route: "/dashboard/home" },
-      { name: "Date Picker", route: "/dashboard/home" },
-      { name: "Select", route: "/dashboard/home" }
-    ]
-  },
-  {
-    name: "Widgets",
-    icon: "assessment"
-  }
-];
+import { ActivatedRoute } from "@angular/router";
 
 @Component({
   selector: "app-dashboard",
@@ -69,8 +38,8 @@ export class DashboardComponent implements OnInit {
     }
   }
 
-  constructor() {
-    this.dataSource.data = TREE_DATA;
+  constructor(private route: ActivatedRoute) {
+    this.dataSource.data = MENU_ITEMS;
   }
 
   toggleProfileMenu() {
@@ -88,5 +57,7 @@ export class DashboardComponent implements OnInit {
       this.matSidenav.close().then(res => res);
       this.matSidenav.mode = "over";
     }
+
+    console.log(this.route.pathFromRoot);
   }
 }

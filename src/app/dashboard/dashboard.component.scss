@@ -27,6 +27,13 @@ span.menu-list-item {
   padding-left: 1.3rem;
   font-size: 15px;
   font-weight: 300;
+  color: #484848;
+}
+
+.active {
+  border-left: 4px solid #2196f3;
+  background-color: #e5e5e5;
+  transition: all 0.3s;
 }
 
 // HEADER COMPONENT

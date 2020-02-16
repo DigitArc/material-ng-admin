@@ -1,41 +1,57 @@
 // HEADER COMPONENT
 .header {
-    background-image : linear-gradient(to right bottom, #1e88e5, #2196f3);
-    display : flex;
-    justify-content: space-between;
-    align-items: center;
+  background-image: linear-gradient(to right bottom, #1e88e5, #2196f3);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 
-    min-height : 50px;
-    &-logo {
-        color : white;
-    }
-
+  min-height: 50px;
+  &-logo {
+    color: white;
+  }
 }
 
 .sidenav-header {
-    background-image : linear-gradient(to right bottom, #2196f3, #1e88e5);
-    min-height: 50px;
+  background-image: linear-gradient(to right bottom, #2196f3, #1e88e5);
+  min-height: 50px;
 }
 
 .sidenav-header-logo {
-    height: 50px;
+  height: 50px;
 }
 
-
 .custom-button {
-    cursor : pointer; 
-    background-color: transparent; 
-    border : none; 
-    outline : none; 
-    color : white;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  color: white;
 }
 
 .icon-rotated-180 {
-    transform : rotate(180deg);
-    transition : all .5s;
+  transform: rotate(180deg);
+  transition: all 0.5s;
 }
 
 .icon-rotated-0 {
-    transform : rotate(0);
-    transition : all .5s;
+  transform: rotate(0);
+  transition: all 0.5s;
+}
+
+.header-right-side {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile-pic-container {
+  height: 35px;
+  width: 35px;
+  border-radius: 100px;
+  background-color: #f7f7f7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #484848;
+  font-weight: 300;
 }

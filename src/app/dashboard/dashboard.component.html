@@ -6,9 +6,9 @@
       style="display: flex; align-items: center; justify-content: flex-start;"
     >
       <img
-        style="height: 35px;"
+        style="height: 30px; margin-top: 5px;"
         class="sidenav-header-logo pl-3"
-        src="assets/images/mat-ng-logo.png"
+        src="assets/images/material-ng-logo.png"
         alt=""
       />
     </div>
@@ -76,24 +76,34 @@
       class="example-tree"
     >
       <!-- This is the tree node template for leaf nodes -->
-      <mat-tree-node *matTreeNodeDef="let node" matTreeNodeToggle>
-        <button
+      <mat-tree-node
+        [ngStyle]="{
+          minHeight: node.seperator && '20px'
+        }"
+        routerLinkActive="active"
+        *matTreeNodeDef="let node"
+        matTreeNodeToggle
+      >
+        <a
+          *ngIf="!node.seperator"
           [routerLink]="node.route"
           fxLayout="row"
           fxLayoutAlign="start center"
-          style="width: 100%"
-          class="mat-tree-node no-outline"
-          mat-button
-          matTreeNodeToggle
+          style="width: 100%; cursor: pointer; text-decoration: none;"
+          class="mat-tree-node no-outline p-10"
+          matRipple
         >
-          <mat-icon
-            fontSet="material-icons-outlined"
-            class="mat-icon-rtl-mirror"
-          >
+          <mat-icon fontSet="material-icons-outlined">
             {{ node.icon }}
           </mat-icon>
           <span class="menu-list-item">{{ node.name }}</span>
-        </button>
+        </a>
+        <div
+          *ngIf="node.seperator"
+          style="padding-left: 13px; color: #767676; font-size: 13px; font-weight: 400; margin-top: 10px"
+        >
+          {{ node.name }}
+        </div>
       </mat-tree-node>
 
       <!-- This is the tree node template for expandable nodes -->
@@ -107,7 +117,7 @@
             matRipple
             matTreeNodeToggle
           >
-            <mat-icon>
+            <mat-icon fontSet="material-icons-outlined">
               {{ node.icon }}
             </mat-icon>
             <span class="menu-list-item">{{ node.name }}</span>

@@ -20,6 +20,7 @@ import { MatMenuModule } from "@angular/material/menu";
 import { MatTreeModule } from "@angular/material/tree";
 import { MatRippleModule } from "@angular/material/core";
 import { FlexLayoutModule } from "@angular/flex-layout";
+import { MatToolbarModule } from "@angular/material/toolbar";
 
 @NgModule({
   declarations: [DashboardComponent, HeaderComponent],
@@ -34,6 +35,7 @@ import { FlexLayoutModule } from "@angular/flex-layout";
     MatMenuModule,
     MatTreeModule,
     MatRippleModule,
+    MatToolbarModule,
     FlexLayoutModule,
 
     DashboardRoutingModule
