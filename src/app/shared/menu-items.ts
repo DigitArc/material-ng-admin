@@ -54,13 +54,13 @@ export const MENU_ITEMS: RouteNode[] = [
     name: "Apps",
     icon: "apps",
     children: [
-      { name: "Calendar", route: "/dashboard/home" },
-      { name: "Mailbox", route: "/dashboard/home" },
-      { name: "Chat", route: "/dashboard/home" },
-      { name: "Taskboard", route: "/dashboard/home" },
-      { name: "Contact", route: "/dashboard/home" },
-      { name: "Product List", route: "/dashboard/home" },
-      { name: "Product Details", route: "/dashboard/home" }
+      { name: "Calendar", route: "/dashboard/apps/calendar" },
+      { name: "Mailbox", route: "/dashboard/apps/mailbox" },
+      { name: "Chat", route: "/dashboard/apps/chat" },
+      { name: "Taskboard", route: "/dashboard/apps/taskboard" },
+      { name: "Contact", route: "/dashboard/apps/contact" },
+      { name: "Product List", route: "/dashboard/apps/product-list" },
+      { name: "Product Details", route: "/dashboard/apps/product-details" }
     ]
   },
   {
