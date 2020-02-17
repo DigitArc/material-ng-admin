@@ -18,6 +18,13 @@ const routes: Routes = [
           import("./pages/home/home.module").then(m => m.HomeModule)
       },
       {
+        path: "material-ui",
+        loadChildren: () =>
+          import("./pages/material-ui/material-ui.module").then(
+            m => m.MaterialUiModule
+          )
+      },
+      {
         path: "reservation",
         loadChildren: () =>
           import("./pages/reservation/reservation.module").then(

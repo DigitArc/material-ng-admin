@@ -36,6 +36,10 @@ export const MENU_ITEMS: RouteNode[] = [
       { name: "Chips", route: "/dashboard/material-ui/chips" },
       { name: "Toolbar", route: "/dashboard/material-ui/toolbar" },
       {
+        name: "Progress Bar",
+        route: "/dashboard/material-ui/progress-bar"
+      },
+      {
         name: "Progress Spinner",
         route: "/dashboard/material-ui/progress-spinner"
       },

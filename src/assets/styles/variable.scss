@@ -13,10 +13,43 @@ $headingfont: "Poppins", sans-serif;
 
 @import "~@angular/material/theming";
 
+$accent-palette: (
+  50: #ecf8fa,
+  100: #cfedf3,
+  200: #afe2eb,
+  300: #8ed6e3,
+  400: #76cddd,
+  500: #5ec4d7,
+  600: #56bed3,
+  700: #4cb6cd,
+  800: #42afc7,
+  900: #31a2be,
+  A100: #ffffff,
+  A200: #d0f5ff,
+  A400: #9deaff,
+  A700: #84e5ff,
+  contrast: (
+    50: #000000,
+    100: #000000,
+    200: #000000,
+    300: #000000,
+    400: #ffffff,
+    500: #ffffff,
+    600: #ffffff,
+    700: #ffffff,
+    800: #ffffff,
+    900: #ffffff,
+    A100: #000000,
+    A200: #000000,
+    A400: #000000,
+    A700: #ffffff
+  )
+);
+
 /*Material Theme Colors*/
 
 $primary: mat-palette($mat-blue, 600);
-$accent: mat-palette($mat-indigo, 500);
+$accent: mat-palette($accent-palette, 500);
 $warn: mat-palette($mat-pink, 500);
 $theme: mat-light-theme($primary, $accent, $warn);
 $background: map-get($theme, background);
