@@ -10,10 +10,7 @@ import {
 import { adapterFactory } from "angular-calendar/date-adapters/date-fns";
 
 import { AppsRoutingModule } from "./apps-routing.module";
-import {
-  CalendarComponent,
-  CalendarDialogComponent
-} from "./calendar/calendar.component";
+import { CalendarComponent } from "./calendar/calendar.component";
 import { MailboxComponent } from "./mailbox/mailbox.component";
 import { ChatComponent } from "./chat/chat.component";
 import { TaskboardComponent } from "./taskboard/taskboard.component";
@@ -21,6 +18,7 @@ import { ContactComponent } from "./contact/contact.component";
 import { ProductListComponent } from "./product-list/product-list.component";
 import { ProductDetailsComponent } from "./product-details/product-details.component";
 import { FlexLayoutModule } from "@angular/flex-layout";
+import { CalendarDialogComponent } from "./calendar/calendar-dialog/calendar-dialog.component";
 
 @NgModule({
   declarations: [
@@ -30,7 +28,8 @@ import { FlexLayoutModule } from "@angular/flex-layout";
     TaskboardComponent,
     ContactComponent,
     ProductListComponent,
-    ProductDetailsComponent
+    ProductDetailsComponent,
+    CalendarDialogComponent
   ],
   imports: [
     CommonModule,
