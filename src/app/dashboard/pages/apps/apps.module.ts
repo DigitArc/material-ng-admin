@@ -10,6 +10,7 @@ import {
 import { adapterFactory } from "angular-calendar/date-adapters/date-fns";
 import { QuillModule } from "ngx-quill";
 import { Ng2SearchPipeModule } from "ng2-search-filter";
+import { DragulaModule } from "ng2-dragula";
 
 import { AppsRoutingModule } from "./apps-routing.module";
 import { CalendarComponent } from "./calendar/calendar.component";
@@ -47,6 +48,7 @@ import { ContactContentDialogComponent } from "./contact/contact-content-dialog/
     AppsRoutingModule,
     Ng2SearchPipeModule,
     QuillModule.forRoot(),
+    DragulaModule.forRoot(),
     PerfectScrollbarModule,
     CalendarModule.forRoot({
       provide: DateAdapter,

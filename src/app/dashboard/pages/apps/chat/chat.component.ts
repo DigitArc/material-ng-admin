@@ -14,37 +14,37 @@ export class ChatComponent {
   selectedMessage: any;
   messages: any[] = [
     {
-      from: "Nirav Joshi",
+      from: "John Doe",
       photo: "assets/images/users/1.jpg",
       subject: "Hey, how are you?"
     },
     {
-      from: "Sunil Joshi",
+      from: "Angelina Jolie",
       photo: "assets/images/users/2.jpg",
       subject: "Lorem ipsum done dkaghdka"
     },
     {
-      from: "Vishal bhatt",
+      from: "Brad Pitt",
       photo: "assets/images/users/3.jpg",
       subject: "Thanks mate"
     },
     {
-      from: "Genelia Desouza",
+      from: "Lorem Ipsum",
       photo: "assets/images/users/4.jpg",
       subject: "This is my shot"
     },
     {
-      from: "Linda muke",
+      from: "Alex Desouza",
       photo: "assets/images/users/5.jpg",
       subject: "You have to do it with your self"
     },
     {
-      from: "Vaibhav Zala",
+      from: "Adriana Lima",
       photo: "assets/images/users/6.jpg",
       subject: "No mate this is not"
     },
     {
-      from: "Kalu valand",
+      from: "Johnny Doe",
       photo: "assets/images/users/1.jpg",
       subject: "Arti thai gai ne?"
     }
