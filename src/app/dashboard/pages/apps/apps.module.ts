@@ -25,6 +25,7 @@ import { CalendarDialogComponent } from "./calendar/calendar-dialog/calendar-dia
 import { ComposeMailDialogComponent } from "./mailbox/compose-mail-dialog/compose-mail-dialog.component";
 import { PerfectScrollbarModule } from "ngx-perfect-scrollbar";
 import { ContactContentDialogComponent } from "./contact/contact-content-dialog/contact-content-dialog.component";
+import { ProductListDialogComponent } from "./product-list/product-list-dialog/product-list-dialog.component";
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { ContactContentDialogComponent } from "./contact/contact-content-dialog/
     ProductDetailsComponent,
     CalendarDialogComponent,
     ComposeMailDialogComponent,
-    ContactContentDialogComponent
+    ContactContentDialogComponent,
+    ProductListDialogComponent
   ],
   imports: [
     CommonModule,
@@ -58,7 +60,8 @@ import { ContactContentDialogComponent } from "./contact/contact-content-dialog/
   entryComponents: [
     CalendarDialogComponent,
     ComposeMailDialogComponent,
-    ContactContentDialogComponent
+    ContactContentDialogComponent,
+    ProductListDialogComponent
   ]
 })
 export class AppsModule {}
