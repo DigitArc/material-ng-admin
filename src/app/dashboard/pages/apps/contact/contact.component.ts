@@ -52,7 +52,7 @@ export class ContactComponent implements OnInit {
         contactimg: "assets/images/users/2.jpg",
         contactname: "Johnathan Doe",
         contactpost: "Web Designer",
-        contactadd: "795 Folsom Ave, Suite 600 San Francisco, CADGE 94107",
+        contactadd: "795 Folsom Ave, Suite 600 San Francisco",
         contactno: "(123) 456-7890",
         contactinstagram: "254",
         contactlinkedin: "54",
