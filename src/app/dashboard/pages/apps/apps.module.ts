@@ -9,6 +9,7 @@ import {
 } from "angular-calendar";
 import { adapterFactory } from "angular-calendar/date-adapters/date-fns";
 import { QuillModule } from "ngx-quill";
+import { Ng2SearchPipeModule } from "ng2-search-filter";
 
 import { AppsRoutingModule } from "./apps-routing.module";
 import { CalendarComponent } from "./calendar/calendar.component";
@@ -22,6 +23,7 @@ import { FlexLayoutModule } from "@angular/flex-layout";
 import { CalendarDialogComponent } from "./calendar/calendar-dialog/calendar-dialog.component";
 import { ComposeMailDialogComponent } from "./mailbox/compose-mail-dialog/compose-mail-dialog.component";
 import { PerfectScrollbarModule } from "ngx-perfect-scrollbar";
+import { ContactContentDialogComponent } from "./contact/contact-content-dialog/contact-content-dialog.component";
 
 @NgModule({
   declarations: [
@@ -33,7 +35,8 @@ import { PerfectScrollbarModule } from "ngx-perfect-scrollbar";
     ProductListComponent,
     ProductDetailsComponent,
     CalendarDialogComponent,
-    ComposeMailDialogComponent
+    ComposeMailDialogComponent,
+    ContactContentDialogComponent
   ],
   imports: [
     CommonModule,
@@ -42,6 +45,7 @@ import { PerfectScrollbarModule } from "ngx-perfect-scrollbar";
     FormsModule,
     FlexLayoutModule,
     AppsRoutingModule,
+    Ng2SearchPipeModule,
     QuillModule.forRoot(),
     PerfectScrollbarModule,
     CalendarModule.forRoot({
@@ -49,6 +53,10 @@ import { PerfectScrollbarModule } from "ngx-perfect-scrollbar";
       useFactory: adapterFactory
     })
   ],
-  entryComponents: [CalendarDialogComponent, ComposeMailDialogComponent]
+  entryComponents: [
+    CalendarDialogComponent,
+    ComposeMailDialogComponent,
+    ContactContentDialogComponent
+  ]
 })
 export class AppsModule {}
