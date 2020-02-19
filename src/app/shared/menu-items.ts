@@ -71,9 +71,20 @@ export const MENU_ITEMS: RouteNode[] = [
     name: "Forms",
     icon: "format_align_center",
     children: [
-      { name: "Text Inputs", route: "/dashboard/home" },
-      { name: "Date Picker", route: "/dashboard/home" },
-      { name: "Select", route: "/dashboard/home" }
+      { name: "Form Layout", route: "/dashboard/forms/formlayout" },
+      { name: "Autocomplete", route: "/dashboard/forms/autocomplete" },
+      { name: "Checkbox", route: "/dashboard/forms/checkbox" },
+      { name: "Radio Button", route: "/dashboard/forms/radiobutton" },
+      { name: "Datepicker", route: "/dashboard/forms/datepicker" },
+      { name: "Select", route: "/dashboard/forms/select" },
+      { name: "Form Field", route: "/dashboard/forms/formfield" },
+      { name: "Inputs", route: "/dashboard/forms/inputs" },
+      { name: "Tree", route: "/dashboard/forms/tree" },
+      { name: "Editor", route: "/dashboard/forms/formvalidation" },
+      { name: "File Upload", route: "/dashboard/forms/fileupload" },
+      { name: "Wizard", route: "/dashboard/forms/wizard" },
+      { name: "Paginator", route: "/dashboard/forms/paginator" },
+      { name: "Sort Header", route: "/dashboard/forms/sortheader" }
     ]
   },
   {

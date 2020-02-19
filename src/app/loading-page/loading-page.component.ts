@@ -12,6 +12,6 @@ export class LoadingPageComponent implements OnInit {
   ngOnInit() {
     setTimeout(() => {
       this.router.navigate(["dashboard"]);
-    }, 500);
+    }, 5000);
   }
 }

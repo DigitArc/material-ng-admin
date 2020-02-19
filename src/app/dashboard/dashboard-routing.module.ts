@@ -30,6 +30,11 @@ const routes: Routes = [
           import("./pages/apps/apps.module").then(m => m.AppsModule)
       },
       {
+        path: "forms",
+        loadChildren: () =>
+          import("./pages/forms/forms.module").then(m => m.FormsModule)
+      },
+      {
         path: "reservation",
         loadChildren: () =>
           import("./pages/reservation/reservation.module").then(

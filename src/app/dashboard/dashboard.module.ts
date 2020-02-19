@@ -28,6 +28,8 @@ import { PERFECT_SCROLLBAR_CONFIG } from "ngx-perfect-scrollbar";
 import { PerfectScrollbarConfigInterface } from "ngx-perfect-scrollbar";
 import { MatCheckboxModule } from "@angular/material/checkbox";
 import { MatSlideToggleModule } from "@angular/material/slide-toggle";
+import { SpinnerComponent } from "../shared/spinner.component";
+import { DemoMaterialModule } from "../demo-material-module";
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true,
@@ -36,7 +38,7 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
 };
 
 @NgModule({
-  declarations: [DashboardComponent, HeaderComponent],
+  declarations: [DashboardComponent, HeaderComponent, SpinnerComponent],
   imports: [
     CommonModule,
     FormsModule,
@@ -54,6 +56,7 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     MatCheckboxModule,
     MatSlideToggleModule,
     PerfectScrollbarModule,
+    DemoMaterialModule,
 
     DashboardRoutingModule
   ]
