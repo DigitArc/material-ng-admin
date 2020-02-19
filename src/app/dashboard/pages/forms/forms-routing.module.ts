@@ -62,7 +62,7 @@ const routes: Routes = [
     component: RadiobuttonComponent
   },
   {
-    path: "autocomplete",
+    path: "select",
     component: SelectComponent
   },
   {

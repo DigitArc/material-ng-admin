@@ -1,15 +1,41 @@
-import { Component, OnInit } from '@angular/core';
-
+import { Component } from "@angular/core";
+import { FormControl } from "@angular/forms";
+import { MatDatepickerInputEvent } from "@angular/material/datepicker";
+import { DateAdapter } from "@angular/material/core";
 @Component({
-  selector: 'app-datepicker',
-  templateUrl: './datepicker.component.html',
-  styleUrls: ['./datepicker.component.scss']
+  selector: "app-datepicker",
+  templateUrl: "./datepicker.component.html",
+  styleUrls: ["./datepicker.component.scss"]
 })
-export class DatepickerComponent implements OnInit {
+export class DatepickerComponent {
+  // this is for the start date
+  startDate = new Date(1990, 0, 1);
 
-  constructor() { }
+  minDate = new Date(2000, 0, 1);
+  maxDate = new Date(2020, 0, 1);
 
-  ngOnInit(): void {
+  // Datepicker selected value
+  date = new FormControl(new Date());
+  serializedDate = new FormControl(new Date().toISOString());
+
+  // Datepicker input and change event
+
+  events: string[] = [];
+
+  addEvent(type: string, event: MatDatepickerInputEvent<Date>) {
+    this.events.push(`${type}: ${event.value}`);
   }
 
+  myFilter = (d: Date): boolean => {
+    const day = d.getDay();
+    // Prevent Saturday and Sunday from being selected.
+    return day !== 0 && day !== 6;
+    // tslint:disable-next-line:semicolon
+  };
+
+  constructor(private adapter: DateAdapter<any>) {}
+
+  french() {
+    this.adapter.setLocale("fr");
+  }
 }

@@ -21,6 +21,10 @@ import {
   ReactiveFormsModule,
   FormsModule as NgFormsModule
 } from "@angular/forms";
+import { NgMultiSelectDropDownModule } from "ng-multiselect-dropdown";
+import { MatTreeModule } from "@angular/material/tree";
+import { FileUploadModule } from "ng2-file-upload";
+import { QuillModule } from "ngx-quill";
 
 @NgModule({
   declarations: [
@@ -45,7 +49,11 @@ import {
     FormsRoutingModule,
     DemoMaterialModule,
     ReactiveFormsModule,
-    NgFormsModule
+    NgFormsModule,
+    NgMultiSelectDropDownModule,
+    MatTreeModule,
+    FileUploadModule,
+    QuillModule.forRoot()
   ]
 })
 export class FormsModule {}
