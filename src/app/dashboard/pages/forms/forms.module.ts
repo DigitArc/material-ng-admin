@@ -16,6 +16,11 @@ import { FileUploadComponent } from "./file-upload/file-upload.component";
 import { WizardComponent } from "./wizard/wizard.component";
 import { PaginatorComponent } from "./paginator/paginator.component";
 import { SortHeaderComponent } from "./sort-header/sort-header.component";
+import { DemoMaterialModule } from "src/app/demo-material-module";
+import {
+  ReactiveFormsModule,
+  FormsModule as NgFormsModule
+} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -35,6 +40,12 @@ import { SortHeaderComponent } from "./sort-header/sort-header.component";
     PaginatorComponent,
     SortHeaderComponent
   ],
-  imports: [CommonModule, FormsRoutingModule]
+  imports: [
+    CommonModule,
+    FormsRoutingModule,
+    DemoMaterialModule,
+    ReactiveFormsModule,
+    NgFormsModule
+  ]
 })
 export class FormsModule {}
