@@ -103,10 +103,10 @@ export const MENU_ITEMS: RouteNode[] = [
     name: "Data Tables",
     icon: "web",
     children: [
-      { name: "Basic Data Table", route: "/dashboard/home" },
-      { name: "Filterable", route: "/dashboard/home" },
-      { name: "Editing", route: "/dashboard/home" },
-      { name: "Material Table", route: "/dashboard/home" }
+      { name: "Basic Data Table", route: "/dashboard/data-tables/basictable" },
+      { name: "Filterable", route: "/dashboard/data-tables/filterable" },
+      { name: "Editing", route: "/dashboard/data-tables/editing" },
+      { name: "Material Table", route: "/dashboard/data-tables/materialtable" }
     ]
   },
   {

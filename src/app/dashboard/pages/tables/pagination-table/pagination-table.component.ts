@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from "@angular/core";
+import { Component, OnInit, ViewChild, AfterViewInit } from "@angular/core";
 import { MatTableDataSource } from "@angular/material/table";
 import { BreakpointObserver } from "@angular/cdk/layout";
 import { MatPaginator } from "@angular/material/paginator";
@@ -38,7 +38,7 @@ const ELEMENT_DATA: Element[] = [
   templateUrl: "./pagination-table.component.html",
   styleUrls: ["./pagination-table.component.scss"]
 })
-export class PaginationTableComponent {
+export class PaginationTableComponent implements AfterViewInit {
   displayedColumns = ["position", "name", "weight", "symbol"];
   dataSource = new MatTableDataSource<Element>(ELEMENT_DATA);
 

@@ -40,6 +40,13 @@ const routes: Routes = [
           import("./pages/tables/tables.module").then(m => m.TablesModule)
       },
       {
+        path: "data-tables",
+        loadChildren: () =>
+          import("./pages/data-tables/data-tables.module").then(
+            m => m.DataTablesModule
+          )
+      },
+      {
         path: "reservation",
         loadChildren: () =>
           import("./pages/reservation/reservation.module").then(

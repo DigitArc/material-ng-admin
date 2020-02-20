@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from "@angular/core";
+import { Component, OnInit, ViewChild, AfterViewInit } from "@angular/core";
 import { MatSort } from "@angular/material/sort";
 import { MatTableDataSource } from "@angular/material/table";
 
@@ -37,7 +37,7 @@ const ELEMENT_DATA: Element[] = [
   templateUrl: "./sortable-table.component.html",
   styleUrls: ["./sortable-table.component.scss"]
 })
-export class SortableTableComponent {
+export class SortableTableComponent implements AfterViewInit {
   displayedColumns = ["position", "name", "weight", "symbol"];
   dataSource = new MatTableDataSource(ELEMENT_DATA);
 
