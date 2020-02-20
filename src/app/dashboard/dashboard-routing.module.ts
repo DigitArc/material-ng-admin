@@ -35,6 +35,11 @@ const routes: Routes = [
           import("./pages/forms/forms.module").then(m => m.FormsModule)
       },
       {
+        path: "tables",
+        loadChildren: () =>
+          import("./pages/tables/tables.module").then(m => m.TablesModule)
+      },
+      {
         path: "reservation",
         loadChildren: () =>
           import("./pages/reservation/reservation.module").then(

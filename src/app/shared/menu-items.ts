@@ -92,12 +92,11 @@ export const MENU_ITEMS: RouteNode[] = [
     name: "Tables",
     icon: "table_chart",
     children: [
-      { name: "Basic Table", route: "/dashboard/home" },
-      { name: "Filterable Table", route: "/dashboard/home" },
-      { name: "Pagination Table", route: "/dashboard/home" },
-      { name: "Sortable Table", route: "/dashboard/home" },
-      { name: "Mix Table", route: "/dashboard/home" },
-      { name: "Smart Table", route: "/dashboard/home" }
+      { name: "Basic Table", route: "/dashboard/tables/basictable" },
+      { name: "Filterable Table", route: "/dashboard/tables/filterabletable" },
+      { name: "Pagination Table", route: "/dashboard/tables/paginationtable" },
+      { name: "Sortable Table", route: "/dashboard/tables/sortabletable" },
+      { name: "Mix Table", route: "/dashboard/tables/mixtable" }
     ]
   },
   {
