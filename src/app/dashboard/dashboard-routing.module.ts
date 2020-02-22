@@ -47,6 +47,11 @@ const routes: Routes = [
           )
       },
       {
+        path: "widgets",
+        loadChildren: () =>
+          import("./pages/widgets/widgets.module").then(m => m.WidgetsModule)
+      },
+      {
         path: "reservation",
         loadChildren: () =>
           import("./pages/reservation/reservation.module").then(
